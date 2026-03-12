@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.z-depth-12 {box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);}
+.z-depth-5 {box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);}
+
+/* background & mask */
+section{
+    position: relative;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url('../img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 800;
+}
+
+section::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: -30px;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: screen;
+    background: url('../img/masks.png');
+    background-size: 1160px;
+    background-position: center;
+    z-index: -100;
+} 
+
+/* header logo, navigation */
+header{position: absolute;top: 0;left: 0;width: 100%;padding: 40px 60px;display: flex;justify-content: space-between;align-items: center;z-index: 1000;}
+header .logo{position: relative;color: #015b75;text-decoration: none;font-size: 30px;font-weight: 700;letter-spacing: 2px;}
+
+/* toggle ketika diclik */
+
+header .toggle{position: absolute;bottom: 40px;right: 50px;display: flex;justify-content: center;align-items: center;width: 40px;height: 40px;background: url('../img/menu.png');background-size: 30px;background-position: center;background-repeat: no-repeat;cursor: pointer;}
+header .toggle.active{background: url('../img/close.png');background-size: 25px;background-position: center;background-repeat: no-repeat;cursor: pointer;}
+
+
+
+/* Profile */
+.play{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.play img{
+    max-width: 40px;
+}
+
+.play span{
+    font-weight: 600;
+    color: #015b75;
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* navbar responsive */
+
+.navigation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 900;
+}
+
+.navigation.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navigation ul li{ list-style: none;
+}
+
+.navigation ul li a{
+    display: inline-block;
+    color: #015b75;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.navigation ul li a:hover{
+    color: #FF286F;
+}
+
+/* konten nama/jabatan */
+
+.content{
+    padding: 90px;
+    margin-top: 100px;
+    z-index: 1000; 
+}
+
+.content h2{
+    font-size: 8em;
+    line-height: 80px;
+    color: #015b75;
+    font-family: 'Kaushan Script', cursive;
+    /* animation: kekiri 2s ease-out; */
+}
+
+.content h3{
+    font-size: 7em;
+    line-height: 20px;
+    color: #015b75;
+    font-family: 'Kaushan Script', cursive;
+    /* animation: kekiri 2s ease-out; */
+}
+
+.content h4{
+    bottom: 40px;
+    right: 50px;
+    font-size: 2em;
+    color: #FF286F;
+    font-family: 'Kaushan Script', cursive;
+    margin-left: 10px;
+    /* animation: kekiri 2s ease-out; */
+}
+
+/* sosial media */
+.sci{
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    text-decoration: none;
+    transform: scale(0.6);
+}
+
+
+.trailer{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    /* background: url('../img/body1.jpg'); */
+    background: rgba(255, 255, 255, 0.96);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    
+}
+
+.trailer.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* .trailer card{
+    max-width: 900px;
+    outline: none;
+} */
+
+.trailer .close{
+    position: absolute;
+    top:50px;
+    right:50px;
+    cursor: pointer;
+    max-width: 25px;
+}
+
+/* button contact me*/
+.bt{
+    padding-left: 10px;
+    margin-top: 20px;
+    /* animation: keatas 2s ease-out; */
+}
+
+.bt a {
+    display: block;
+    width: 150px;
+    padding: 5px 15px;
+    text-align: center;
+    color: #015b75;
+    border: solid 1px #015b75;
+    text-transform: uppercase; 
+    text-decoration: none;
+}
+
+.bt a:hover{
+    border-color:#FF286F;
+    color: #FF286F;
+}
+
+
+.card-photo{
+    width: 100%;
+    height: 225px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
+
+
+/* portofolio */
+.card-photo{width: 100%;height: 225px;background-size: cover;background-position: center;transition: 0.3s all ease-in-out;-moz-transition: 0.3s all ease-in-out;-o-transition: 0.3s all ease-in-out;-webkit-transition: 0.3s all ease-in-out;}
+.card-data {margin-top: 40%;transform: scale(0);transition: 0.8s all ease-in;}
+.ig-photo:hover .card-data {animation: muncul 0.6s;transform: scale(1);}
+.ig-photo:hover .card-photo {transform: scale(1.5, 1.5);}
+.port-photo:hover .card-photo {transform: scale(1.1, 1.1);}
+.card-data {margin-top: 40%;transform: scale(0);transition: 0.8s all ease-in;}
+.ig-photo:hover .card-photo-overlay {/* height: 100%; */opacity: 1;transform: scale(1);}
+.card-photo-overlay {width: 100%;height: 100%;position: absolute;background-color: rgba(0, 0, 0, 0.7);top: 0;left: 0;opacity: 0;transform: scale(0);border-radius: 60px;transition: 0.3s all ease;-webkit-transition: 0.3s all ease;-moz-transition: 0.3s all ease;-o-transition: 0.3s all ease;}
+.black-overlay {width: 100%;height: 100%;position: absolute;background-color: rgba(0, 0, 0, 0.5);top: 0;left: 0;transition: 0.3s all ease;-webkit-transition: 0.3s all ease;-moz-transition: 0.3s all ease;-o-transition: 0.3s all ease;}
+.card>img{border-radius: 6%;}
+
+.porto{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    /* background: url('../img/body1.jpg'); */
+    background: rgba(255, 255, 255, 0.96);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.porto.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.porto .close{
+    position: absolute;
+    top:50px;
+    right:50px;
+    cursor: pointer;
+    max-width: 25px;
+}
+
+/* gallery */
+
+
+.gallery{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    /* background: url('../img/body1.jpg'); */
+    background: rgba(255, 255, 255, 0.96);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.gallery.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery .close{
+    position: absolute;
+    top:50px;
+    right:50px;
+    cursor: pointer;
+    max-width: 25px;
+}
+
+/* contact us */
+.judulcontact{margin-left: 20px;font-family: 'Kaushan Script', cursive;font-size: 45px;}
+.map iframe{width: 100%;border-radius: 30px;height: 350px;}
+
+.contactinfo{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    /* background: url('../img/body1.jpg'); */
+    background: rgba(255, 255, 255, 0.96);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    
+}
+
+.contactinfo.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.contactinfo .close{
+    position: absolute;
+    top:50px;
+    right:50px;
+    cursor: pointer;
+    max-width: 25px;
+}
+
+
+/* responsive */
+@media (max-width: 567px){
+    section::before{
+        background-size: 915px;
+        margin-left: 30px;
+    }
+
+    section{
+        background-size: 1150px;
+    }
+
+    
+    .navigation ul li a{
+        font-size: 32px;
+        font-weight: 400;
+    }
+
+    
+    .content{
+        padding: 55px;
+    }
+    .content h2 {
+        text-align: center; 
+        line-height: 60px;  
+        font-size: 15vw;
+        color: #ffffff;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .content h3 {
+        font-size: 15vw;
+        color: #ffffff;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .content h4 {
+        text-align: center;
+        font-size: 2em;
+        color: #FF286F;
+        text-shadow: 0 5px 15px rgba(255, 255, 255, 0.96);
+    }
+    .bt {
+        padding-left: 100px;
+        margin-top: 20px;
+    }
+
+    .trailer.active{
+        opacity: 1;
+        visibility: visible;
+        overflow: scroll;
+    }
+
+    .trailer .card .card-content{
+        margin-top: 630px;
+    }
+
+    .trailer .card{
+        max-width: 100%;
+
+    }
+
+    .trailer .close{
+        top:50px;
+        right:50px;
+        cursor: pointer;
+        max-width: 20px;
+    }
+
+    .porto .container{
+        margin-top: 480px;
+    }
+
+    .porto .card{
+        max-width: 95%;
+    }
+
+    .porto.active{
+        opacity: 1;
+        visibility: visible;
+        overflow: scroll;
+    }
+
+    .porto .close{
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+        max-width: 20px;
+    }
+
+    .gallery .container{
+        margin-top: 680px;
+    }
+
+    .gallery.active{
+        opacity: 1;
+        visibility: visible;
+        overflow: scroll;
+    }
+
+    .gallery .close{
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+        max-width: 20px;
+    }
+
+
+
+    .contactinfo .container{
+        margin-top: 600px;
+    }
+
+    .contactinfo.active{
+        opacity: 1;
+        overflow: scroll;
+    }
+
+    .contactinfo .close{
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+        max-width: 20px;
+    }
+
+    .sci{
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .sci li a{
+        display: inline-block;
+        text-decoration: none;
+        transform: scale(0.6);
+    }
+
+}
+
+
+/* animasi */
+
+/* @keyframes kekiri{
+    from{ margin-left: -300px; opacity: 0.4; }
+    to { margin-left: 20px; opacity: 1; }
+}
+
+@keyframes keatas{
+    from{ margin-bottom: -300px; opacity: 0; }
+    to{ margin-bottom: 20px; opacity: 1; }
+} */
